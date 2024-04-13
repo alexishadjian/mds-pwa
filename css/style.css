@@ -1,0 +1,12 @@
+html {
+    background-color: rgb(40, 40, 40);
+    color: #FFFFFF;
+}
+
+canvas {
+    background-color: rgb(255, 255, 255);
+}
+
+.main-container {
+    width: 400px;
+}

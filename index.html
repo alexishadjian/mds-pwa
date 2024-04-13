@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA</title>
+    
+    <link href="./css/style.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+
+    <link href="https://unpkg.com/tailwindcss@%5E2.0/dist/tailwind.min.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="./js/script.js" defer></script>
+    <script src="./js/game.js" defer></script>
+
+</head>
+<body class="p-5 flex item-center justify-center">
+    <div class="main-container">
+        <h1 class="text-3xl font-bold mb-3">Search series</h1>
+        <form class="mb-8" method="POST">
+            <input class="bg-slate-200 px-4 py-2 rounded-lg text-black mr-1" type="text" name="search" placeholder="Type series">
+            <button class="bg-white px-6 py-2 rounded-lg" type="submit">Search</button>
+        </form>
+    
+        <div class="result-container flex-row"></div>
+
+        <div class="game-container hidden">
+            <p class="text-gray-400 italic my-10">No connection, practice in the meantime</p>
+            <h2 class="text-xl my-4">Aim training, shoot the target</h2>
+            <canvas id="gameCanvas" class="rounded-lg" width="400" height="400"></canvas>
+        </div>
+    </div>
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js');
+        }
+    </script>
+</body>
+</html>
